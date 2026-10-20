@@ -1,0 +1,46 @@
+{
+  "name": "dsh-workspace",
+  "version": "0.1.0",
+  "description": "Copilot-style workspace conventions for DSH: .dsh/instructions.md, hooks.json (PreToolUse/PostToolUse) and per-workspace rules.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "tests",
+    "cordis.patch.yml",
+    "dsh-plugin.json",
+    "icon.svg",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "workspace",
+    "instructions",
+    "hooks",
+    "copilot"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mortis1-1/dsh-workspace.git"
+  },
+  "homepage": "https://github.com/mortis1-1/dsh-workspace#readme",
+  "bugs": {
+    "url": "https://github.com/mortis1-1/dsh-workspace/issues"
+  }
+}

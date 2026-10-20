@@ -1,0 +1,35 @@
+{
+  "$schema": "https://raw.githubusercontent.com/T-Auto/dsh-std/8a15541117cb3c13ddb8f2468308691b6051d162/packages/manifest/schema/dsh-plugin-0.15.schema.json",
+  "manifestVersion": "0.15",
+  "id": "dsh-workspace.core",
+  "name": "dsh-workspace",
+  "version": "0.1.0",
+  "license": "MIT",
+  "facets": {
+    "host": {
+      "entry": "lib/index.js",
+      "apiVersion": "v1alpha1"
+    }
+  },
+  "permissions": [
+    {
+      "name": "dsh-workspace.fs.read",
+      "scope": "workspace",
+      "reason": "Read .dsh/instructions.md, .dsh/hooks.json and .dsh/rules.json from the active workspace so conventions apply without a restart."
+    },
+    {
+      "name": "dsh-workspace.hooks.spawn",
+      "scope": "subprocess",
+      "reason": "Run the workspace's own PreToolUse/PostToolUse hook commands with a JSON payload on stdin, the same contract Copilot hooks use."
+    }
+  ],
+  "contributes": {
+    "x-display": [
+      {
+        "icon": "./icon.svg",
+        "title": "dsh-workspace",
+        "description": "Load Copilot-style workspace conventions: .dsh/instructions.md into the prompt, .dsh/hooks.json as PreToolUse/PostToolUse hooks, and .dsh/rules.json as per-workspace path rules."
+      }
+    ]
+  }
+}
